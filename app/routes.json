@@ -18,6 +18,12 @@
       "hasStyle": true
     },
     {
+      "title": "Home",
+      "hash": "#home",
+      "view": "home",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
