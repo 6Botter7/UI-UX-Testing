@@ -16,23 +16,25 @@ export class DragComponent extends HTMLElement {
     }
 
     async disconnectedCallback(){
-        this.removeEventListener("mouseDown", this.mouseDownHandler);
+        this.removeEventListener("mousemove", this.mouseMoveHandler);
         this.mouseDownHandler = null;
+        this.mouseUpHandler = null;
+        this.mouseMoveHandler = null;
     }
 
     async mouseDown(event){
         if(event.target.matches(".mBox")){
             this._moveElement = event.target;
-            document.addEventListener("mouseUp", this.mouseDownHandler);
-            document.addEventListener("mouseMove", this.mouseDownHandler);
+            document.addEventListener("mouseup", this.mouseUpHandler);
+            document.addEventListener("mousemove", this.mouseMoveHandler);
         }
     }
 
     async mouseUp(event){
-        console.log(event.target)
+        this._moveElement.style.background = "#7fff00";
         this._moveElement = null;
-        document.removeEventListener("mouseUp", this.mouseDownHandler);
-        document.removeEventListener("mouseMove", this.mouseDownHandler);
+        document.removeEventListener("mouseup", this.mouseDownHandler);
+        document.removeEventListener("mousemove", this.mouseDownHandler);
     }
 
     async mouseMove(event){
