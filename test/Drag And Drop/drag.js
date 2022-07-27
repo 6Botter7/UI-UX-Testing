@@ -1,8 +1,6 @@
 export class Drag extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = await fetch(import.meta.url.replace(".js", ".html")).then(result => result.text());
-    
-
         await super.connectedCallback();
         
         
@@ -44,9 +42,8 @@ export class Drag extends HTMLElement {
     async mouseMove(event){
         this._moveElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
         console.log(this._moveElement.style.transform);
-
     }
 }
 
 
-customElements.define("drag", Drag);
+customElements.define('drag', Drag);
