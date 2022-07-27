@@ -1,15 +1,16 @@
 export class DragComponent extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = await fetch(import.meta.url.replace(".js", ".html")).then(result => result.text());
-        await super.connectedCallback();
-        
+        // await super.connectedCallback();
+
+        this.mouseDownHandler = this.mouseDown.bind(this);
+        this.mouseUpHandler = this.mouseUp.bind(this);
+        this.mouseMoveHandler = this.mouseMove.bind(this);
+
+        this.addEventListener("mousedown", this.mouseDownHandler);
         
         requestAnimationFrame(() => {
-            this.mouseDownHandler = this.mouseDown.bind(this);
-            this.mouseUpHandler = this.mouseUp.bind(this);
-            this.mouseMoveHandler = this.mouseMove.bind(this);
-
-            this.addEventListener("mousedown", this.mouseDownHandler);
+            
         })
 
     }
@@ -20,20 +21,15 @@ export class DragComponent extends HTMLElement {
     }
 
     async mouseDown(event){
-        // if(event.target.matches(".mBox")){
-        //     this._moveElement = event.target;
-        //     document.addEventListener("mouseUp", this.mouseDownHandler);
-        //     document.addEventListener("mouseMove", this.mouseDownHandler);
-        // }
         if(event.target.matches(".mBox")){
-            const x = 200;
-            const y = 100;
-            event.target.style.transform = `translate( ${x}px, ${y}px) scale(2) rotate(45deg)`;
-            event.target.style.background = "#FF0090";
+            this._moveElement = event.target;
+            document.addEventListener("mouseUp", this.mouseDownHandler);
+            document.addEventListener("mouseMove", this.mouseDownHandler);
         }
     }
 
     async mouseUp(event){
+        console.log(event.target)
         this._moveElement = null;
         document.removeEventListener("mouseUp", this.mouseDownHandler);
         document.removeEventListener("mouseMove", this.mouseDownHandler);
