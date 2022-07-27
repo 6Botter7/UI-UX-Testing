@@ -1,4 +1,4 @@
-export class Drag extends HTMLElement {
+export class DragComponent extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = await fetch(import.meta.url.replace(".js", ".html")).then(result => result.text());
         await super.connectedCallback();
@@ -46,4 +46,4 @@ export class Drag extends HTMLElement {
 }
 
 
-customElements.define('drag', Drag);
+customElements.define('drag-component', DragComponent);

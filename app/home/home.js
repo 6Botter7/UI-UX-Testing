@@ -1,4 +1,4 @@
-import "../../test/Drag and Drop/drag.js"
+import "../../test/drag-drop/drag-component.js"
 
 export default class Home extends crsbinding.classes.ViewBase {
     async connectedCallback() {
