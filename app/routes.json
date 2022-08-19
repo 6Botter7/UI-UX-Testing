@@ -23,6 +23,16 @@
       "view": "home"
     },
     {
+      "title": "File",
+      "hash": "#file",
+      "view": "file"
+    },
+    {
+      "title": "Maze Escape",
+      "hash": "#maze-escape",
+      "view": "maze-escape"
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
