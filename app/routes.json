@@ -33,6 +33,16 @@
       "view": "maze-escape"
     },
     {
+      "title": "Designer-Repo",
+      "hash": "#designer-repo",
+      "view": "designer-repo"
+    },
+    {
+      "title": "Animation",
+      "hash": "#animation",
+      "view": "animation"
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
