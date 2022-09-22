@@ -1,0 +1,208 @@
+<style>
+    header {
+        background-color: #262626;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-bar {
+        min-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .nav-branding {
+        font-size: 30px;
+    }
+
+    .nav-link {
+        transition: 0.7s ease;
+    }
+
+    .nav-link:hover {
+        color: chartreuse;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+    }
+
+
+    .container {
+        display: flex;
+        margin: 0;
+    }
+
+    .main-content {
+        width: 70%;
+        border: 3px solid gray;
+        background-color: chartreuse;
+        padding: 20px;
+    }
+
+    .side-content {
+        width: 30%;
+        border: 3px solid gray;
+        background-color: aqua;
+        padding: 20px;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    h2 {
+        color: aqua;
+    }
+
+    @media (max-width: 768px) {
+
+        .hamburger {
+            display: block;
+            float: right;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu {
+            position: fixed;
+            left: -120%;
+            top: 70px;
+            gap: 0;
+            flex-direction: column;
+            background-color: #262626;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            justify-content: space-evenly;
+        }
+
+        .nav-bar {
+            justify-content: space-evenly;
+        }
+
+        .nav-item {
+            margin: 16px 0;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        h2 {
+            color: hotpink;
+        }
+
+        .container {
+            display: block;
+            margin: 0;
+        }
+
+        .main-content {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .side-content {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+</style>
+
+<header>
+    <nav class="nav-bar">
+        <a href="#" class="nav-name">Test.</a>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">Contact</a>
+            </li>
+        </ul>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="main-content">
+        <article>
+            <h1>This is a Main Content Header</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam reiciendis nesciunt aspernatur soluta
+                minus, natus harum facere assumenda laudantium, neque delectus repudiandae sequi dolorem odio asperiores
+                nemo nisi nulla magni?</p>
+
+            <h1>This is a Main Content Header</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam reiciendis nesciunt aspernatur soluta
+                minus, natus harum facere assumenda laudantium, neque delectus repudiandae sequi dolorem odio asperiores
+                nemo nisi nulla magni?</p>
+
+            <h1>This is a Main Content Header</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam reiciendis nesciunt aspernatur soluta
+                minus, natus harum assumenda laudantium, neque delectus repudiandae sequi dolorem odio asperiores
+                nemo nisi nulla magni?</p>
+
+        </article>
+    </section>
+    <section class="side-content">
+        <article>
+            <h1>This is Side Content Header</h1>
+            <p>side-content</p>
+
+            <h1>This is Side Content Header</h1>
+            <p>side-content</p>
+        </article>
+    </section>
+</div>
