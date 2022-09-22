@@ -43,6 +43,11 @@
       "view": "animation"
     },
     {
+      "title": "Mobile View",
+      "hash": "#mobile-view",
+      "view": "mobile-view"
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
